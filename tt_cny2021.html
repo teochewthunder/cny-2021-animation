@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CNY 2021</title>
+
+		<style>
+			body
+			{
+				background-color: #FFFFFF;
+				font-size: 10px;
+			}
+
+			#svgContainer
+			{
+				width: 800px;
+				height: 550px;
+				margin: 5% auto 0 auto;
+				outline: 0px solid #FF0000;
+			}
+
+			svg
+			{
+				width: 800px;
+				height: 550px;
+				background-color: rgba(200, 200, 200, 0);
+			}
+
+			g.text
+			{
+				stroke-width: 1px;
+				font: 20px Georgia;
+				fill: rgba(255, 100, 0, 0);
+			}
+
+			g.light
+			{
+				fill: rgba(255, 100, 0, 0.5);
+			}
+
+			g.medium
+			{
+				fill: rgba(255, 100, 0, 1);
+			}
+
+			g.dark
+			{
+				fill: rgba(100, 0, 0, 1);
+			}
+
+			g.heart
+			{
+				fill: rgba(255, 0, 0, 0);
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div id="svgContainer">
+			<svg>
+				<g class="heart">
+					<path d="M400 285 q-120 -60 0 35 q120 -100 0 -35 Z">
+						<animate 
+							id="animateHeartAppear"
+							attributeName="fill" 
+							from="rgba(255, 0, 0, 0)" 
+							to="rgba(255, 0, 0, 1)"
+							fill="freeze" 
+							begin="2s"
+							dur="1.5s" 
+							repeatCount="1" 
+						/>
+
+ 						<animate 
+							id="animateHeartExpand"
+							attributeName="d" 
+							from="M400 285 q-120 -60 0 35 q120 -100 0 -35 Z" 
+							to="M400 120 q-120 -60 0 120 q120 -180 0 -120 Z"
+							fill="freeze" 
+							begin="animateHeartAppear.end"
+							dur="2s" 
+							repeatCount="1" 
+						/>
+
+						<animate 
+							id="animateHeartContract"
+							attributeName="d" 
+							from="M400 120 q-120 -60 0 120 q120 -180 0 -120 Z" 
+							to="M400 150 q-120 -60 0 100 q120 -150 0 -100 Z"
+							fill="freeze" 
+							begin="animateHeartExpand.end"
+							dur="0.5s" 
+							repeatCount="1" 
+						/>
+
+						<animate 
+							id="animateHeart1"
+							attributeName="d" 
+							from="M400 150 q-125 -60 0 100 q125 -150 0 -100 Z" 
+							to="M400 150 q-130 -60 0 90 q110 -150 0 -90 Z"
+							fill="freeze" 
+							begin="animateHeartContract.end;animateHeart2.end"
+							dur="1.5s" 
+							repeatCount="1" 
+						/>
+
+						<animate 
+							id="animateHeart2"
+							attributeName="d" 
+							from="M400 150 q-130 -60 0 90 q110 -150 0 -90 Z" 
+							to="M400 150 q-125 -60 0 100 q125 -150 0 -100 Z"
+							fill="freeze" 
+							begin="animateHeart1.end"
+							dur="1.5s" 
+							repeatCount="1" 
+						/> 
+					</path>
+
+					<path d="M400 155 q-110 -60 0 90 q110 -155 0 -90 Z">
+						<animate 
+							id="animateHeartHoleAppear"
+							attributeName="fill" 
+							from="rgba(255, 0, 0, 0)" 
+							to="rgba(255, 255, 255, 1)"
+							fill="freeze" 
+							begin="animateHeartContract.end"
+							dur="0.5s" 
+							repeatCount="1" 
+						/>
+					</path>
+				</g>
+
+				<g class="dark">
+					<path d="M380 320 l-30 5 q-80 -110 40 -50 q-100 -40 0 45 Z"></path>
+					<path d="M420 320 l30 5 q80 -110 -40 -50 q100 -40 0 45 Z"></path>
+				</g>
+
+				<g class="dark">
+					<path d="M380 320 l-30 5 q-80 -110 40 -50 q-100 -40 0 45 Z"></path>
+					<path d="M420 320 l30 5 q80 -110 -40 -50 q100 -40 0 45 Z"></path>
+				</g>
+
+				<g class="light">
+					<path d="M400 330 q90 0 5 100 Z"></path>
+					<path d="M400 330 q-90 0 -5 100 Z"></path>
+				</g>
+
+				<g class="medium">					
+					<path d="M340 350 q0 50 -50 50 Z"></path>
+					<path d="M460 350 q0 50 50 50 Z"></path>
+
+					<path d="M400 320 q-70 -30 -70 50 q0 -50 70 -50 Z"></path>
+					<path d="M400 320 q70 -30 70 50 q0 -50 -70 -50 Z"></path>
+
+					<path d="M340 350 q10 0 30 90 Z"></path>
+					<path d="M460 350 q-10 0 -30 90 Z"></path>
+
+					<path d="M350 350 q20 0 40 20 Z"></path>
+					<path d="M450 350 q-20 0 -40 20 Z"></path>
+
+					<path d="M380 430 q-50 30 20 50 q-30 -10 -20 -50 Z"></path>
+					<path d="M420 430 q50 30 -20 50 q30 -10 20 -50 Z"></path>
+				</g>
+
+				<g class="dark">
+					<path d="M390 370 q-20 10 -30 -10 Z">
+						<animate 
+							id="animateEyeClose"
+							attributeName="d" 
+							from="M390 370 q-20 10 -30 -10 Z" 
+							to="M390 375 q-20 0 -30 -10 Z"
+							fill="freeze" 
+							begin="5s;animateEyeOpen.end + 10s"
+							dur="0.5s" 
+							repeatCount="1" 
+						/>
+
+						<animate 
+							id="animateEyeOpen"
+							attributeName="d" 
+							from="M390 375 q-20 0 -30 -10 Z" 
+							to="M390 370 q-20 10 -30 -10 Z"
+							fill="freeze" 
+							begin="animateEyeClose.end"
+							dur="0.5s" 
+							repeatCount="1" 
+						/>
+					</path>
+					<path d="M410 370 q20 10 30 -10 Z"></path>
+
+					<path d="M365 450 q10 -10 20 25 q0 -5 -20 -25 Z"></path>
+					<path d="M435 450 q-10 -10 -20 25 q0 -5 20 -25 Z"></path>
+
+					<path d="M340 355 q0 20 -20 30 Z"></path>
+					<path d="M460 355 q0 20 20 30 Z"></path>
+				</g>
+
+				<g class="text">
+					<text x="250" y="200">
+						year of the
+					</text>
+					<text x="450" y="200">
+						X
+					</text>
+					<text x="320" y="220">
+						valentine's day 2021
+					</text>
+
+					<animate 
+						id="animateTextAppear"
+						attributeName="fill" 
+						from="rgba(255, 0, 0, 0)" 
+						to="rgba(255, 100, 0, 1)"
+						fill="freeze" 
+						begin="0s"
+						dur="2.5s" 
+						repeatCount="1" 
+					/>
+				</g>
+			</svg>
+		</div>
+	</body>
+</html>
